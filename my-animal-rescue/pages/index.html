@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Home</title>
+</head>
+<body>
+  <div id="header"></div>
+
+  <!-- Seiten-Inhalt -->
+
+  <div id="footer"></div>
+  <script src="../js/includes.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Debug script loading
+    console.log('Scripts loaded');
+    window.addEventListener('load', () => {
+      console.log('Window loaded');
+      const hamburger = document.querySelector('.hamburger');
+      console.log('Hamburger found:', hamburger);
+    });
+  </script>
+</body>
+</html>
