@@ -591,6 +591,7 @@ a:focus {
 .donation-button:hover,
 .donation-button:focus {
   background-color: var(--color-secondary-dark);
+  color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   outline: 2px solid var(--color-secondary);
