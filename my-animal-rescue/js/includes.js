@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
         console.log('Hamburger clicked');
-        hamburger.classList.toggle('active');
-        navList.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', navList.classList.contains('active'));
+        hamburger.classList.toggle('hamburger--active');
+        navList.classList.toggle('nav__list--active');
+        hamburger.setAttribute('aria-expanded', navList.classList.contains('nav__list--active'));
       });
     }
 
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', async () => {
           if (otherToggle !== toggle) {
             const otherDropdown = otherToggle.closest('.dropdown');
             const otherMenu = otherDropdown.querySelector('.dropdown__menu');
-            otherMenu.classList.remove('active');
+            otherMenu.classList.remove('dropdown__menu--active');
           }
         });
 
-        menu.classList.toggle('active');
-        toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+        menu.classList.toggle('dropdown__menu--active');
+        toggle.setAttribute('aria-expanded', menu.classList.contains('dropdown__menu--active'));
       });
     });
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.dropdown__menu').forEach(menu => {
-          menu.classList.remove('active');
+          menu.classList.remove('dropdown__menu--active');
         });
         dropdownToggles.forEach(toggle => {
           toggle.setAttribute('aria-expanded', 'false');
@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav') && navList.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navList.classList.remove('active');
+      if (!e.target.closest('.nav') && navList.classList.contains('nav__list--active')) {
+        hamburger.classList.remove('hamburger--active');
+        navList.classList.remove('nav__list--active');
         hamburger.setAttribute('aria-expanded', 'false');
       }
     });
