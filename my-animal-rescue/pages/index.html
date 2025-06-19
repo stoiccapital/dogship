@@ -14,8 +14,24 @@
     <section class="hero" style="background-image: url('../images/hero/hero-bg.jpg')">
       <div class="hero__content">
         <p class="hero__quote">Ein einziges Tier zu retten verändert nicht die Welt, aber die ganze Welt verändert sich für dieses eine Tier.</p>
+        <button class="donation-button" onclick="openDonationModal()">Jetzt Spenden</button>
       </div>
     </section>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeDonationModal()">&times;</span>
+        <h2>Helfen und Spenden</h2>
+        <div class="donation-info">
+          <p><strong>Kreis- und Stadtsparkasse Wasserburg:</strong></p>
+          <p class="iban">IBAN: DE06 7115 2680 0030 2354 02</p>
+          <p class="paypal-info">
+            <strong>Paypal:</strong> info@dogship-bayern.de
+          </p>
+        </div>
+      </div>
+    </div>
 
     <!-- Welcome Section -->
     <section class="welcome">
@@ -50,6 +66,23 @@
       const hamburger = document.querySelector('.hamburger');
       console.log('Hamburger found:', hamburger);
     });
+
+    // Modal functionality
+    function openDonationModal() {
+      document.getElementById('donationModal').style.display = 'block';
+    }
+
+    function closeDonationModal() {
+      document.getElementById('donationModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('donationModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
   </script>
 </body>
 </html>
